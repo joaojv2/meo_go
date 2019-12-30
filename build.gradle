@@ -5,6 +5,7 @@ ext {
     junit_version = '4.12'
     moshi_version = '1.8.0'
     retrofit_version = '2.6.2'
+    picasso_version = '2.71828'
     coroutines_adapter = '0.9.2'
     coroutines_android = '1.1.1'
     okhttp_logging_version = '3.13.1'

@@ -9,7 +9,7 @@ class ChannelsRepositoryImpl(
     private val channelsRemoteDataSource: ChannelsRemoteDataSource
 ) : ChannelsRepository {
 
-    override suspend fun getChannelCatalog(): RemoteResponse<ChannelCatalog> {
-        return channelsRemoteDataSource.getChannelCatalog()
+    override suspend fun getChannelCatalog(url: String?): RemoteResponse<ChannelCatalog> {
+        return channelsRemoteDataSource.getChannelCatalog(url)
     }
 }

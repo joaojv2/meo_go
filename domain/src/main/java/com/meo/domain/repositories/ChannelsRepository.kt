@@ -5,5 +5,5 @@ import com.meo.domain.entities.response.RemoteResponse
 
 interface ChannelsRepository {
 
-    suspend fun getChannelCatalog(): RemoteResponse<ChannelCatalog>
+    suspend fun getChannelCatalog(url: String?): RemoteResponse<ChannelCatalog>
 }

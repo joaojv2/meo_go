@@ -9,7 +9,7 @@ class ChannelsUseCaseImpl(
     private val channelsRepository: ChannelsRepository
 ) : ChannelsUseCase {
 
-    override suspend fun getChannelCatalog(): RemoteResponse<ChannelCatalog> {
-        return channelsRepository.getChannelCatalog()
+    override suspend fun getChannelCatalog(url: String?): RemoteResponse<ChannelCatalog> {
+        return channelsRepository.getChannelCatalog(url)
     }
 }

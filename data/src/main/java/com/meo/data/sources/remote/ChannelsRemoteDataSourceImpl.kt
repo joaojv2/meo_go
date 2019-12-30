@@ -12,8 +12,13 @@ class ChannelsRemoteDataSourceImpl(
     private val mapperToChannelCatalog: BaseMapper<ChannelCatalogResponseBody, ChannelCatalog>
 ) : ChannelsRemoteDataSource {
 
-    override suspend fun getChannelCatalog(): RemoteResponse<ChannelCatalog> {
-        return channelService.getChannels().await()
-            .mapToResponseEntity(mapperToChannelCatalog)
+    override suspend fun getChannelCatalog(url: String?): RemoteResponse<ChannelCatalog> {
+        return if (url != null) {
+            channelService.getChannels(url).await()
+                .mapToResponseEntity(mapperToChannelCatalog)
+        } else {
+            channelService.getChannels().await()
+                .mapToResponseEntity(mapperToChannelCatalog)
+        }
     }
 }
