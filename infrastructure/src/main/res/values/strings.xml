@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">infrastructure</string>
+    <string name="base_url">http://ott.online.meo.pt/</string>
+</resources>
