@@ -1,2 +1,2 @@
-include ':presentation', ':infrastructure', ':data', ':domain'
+include ':presentation', ':infrastructure', ':data', ':domain', ':application'
 rootProject.name='MEO Go'

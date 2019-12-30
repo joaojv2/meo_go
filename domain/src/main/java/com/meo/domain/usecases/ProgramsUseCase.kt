@@ -5,5 +5,5 @@ import com.meo.domain.entities.response.RemoteResponse
 
 interface ProgramsUseCase {
 
-    suspend fun getProgramCatalog(): RemoteResponse<ProgramCatalog>
+    suspend fun getProgramCatalog(channelCallLetter: String): RemoteResponse<ProgramCatalog>
 }
