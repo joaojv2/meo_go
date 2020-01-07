@@ -43,7 +43,9 @@ class HomeScreenActivity : BaseActivity() {
         binding.recyclerViewChannels.layoutManager = linearLayoutManager
         binding.recyclerViewChannels.addOnScrollListener(
             InfiniteScroll(linearLayoutManager) {
-                viewModel.getChannels(viewModel.channelCatalog.value?.nextLink)
+                viewModel.getChannels(
+                    viewModel.channelCatalog.value?.nextLink?.replace("http", "https")
+                )
             }
         )
     }
