@@ -13,7 +13,9 @@ class ProgramsRemoteDataSourceImpl(
 ) : ProgramsRemoteDataSource {
 
     override suspend fun getProgramCatalog(channelCallLetter: String): RemoteResponse<ProgramCatalog> {
-        return programsService.getPrograms(channelCallLetter).await()
+        val url = "https://ott.online.meo.pt/Program/v7/Programs/NowAndNextLiveChannelPrograms?UserAgent=AND&\$filter=CallLetter%20eq%20%27${channelCallLetter}%27&\$orderby=StartDate%20asc"
+
+        return programsService.getPrograms(url).await()
             .mapToResponseEntity(mapperToProgramCatalog)
     }
 }

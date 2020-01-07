@@ -36,7 +36,7 @@ class HomeScreenViewModel(
                     response.body.channels?.forEach { channels ->
                         when (
                             val programs = programsUseCase.getProgramCatalog(
-                                channelCallLetter = "CallLetter%20eq%20%27${channels.callLetter}%27"))
+                                channels.callLetter ?: ""))
                         {
                             is RemoteResponse.Success -> channels.programs = programs.body
                             is RemoteResponse.Error -> onError(programs.message)
